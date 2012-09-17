@@ -14,6 +14,9 @@ Screenforall::Application.routes.draw do
   resources :videos
   
   root :to => "videos#new"
+  
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
