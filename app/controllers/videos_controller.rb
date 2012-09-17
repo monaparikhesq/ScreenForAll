@@ -1,4 +1,14 @@
 class VideosController < ApplicationController
+  def index
+     @videos = Video.all
+
+     respond_to do |format|
+       format.html # index.html.erb
+       format.json { render json: @videos }
+     end
+   end
+  
+  
   def show
     @video = Video.find(params[:id])
     @original_video = @video.panda_video
